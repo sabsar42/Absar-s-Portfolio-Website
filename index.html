@@ -21,54 +21,79 @@
             background-color: rgb(3, 14, 14);
             color: white;
         }
-        nav{
+
+        nav {
             display: flex;
             justify-content: space-around;
             align-items: center;
             height: 70px;
-           
-            background-color:  rgb(5, 30, 30); ;
+
+            background-color: rgb(5, 30, 30);
+            ;
         }
-        nav ul{
+
+        nav ul {
             display: flex;
             justify-content: cneter;
         }
-        nav ul li{
+
+        nav ul li {
             list-style-type: none;
             margin: 0 23px;
         }
-        .left{
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+
+            color: rgb(65, 197, 206);
+            font-size: 1.18rem;
+        }
+
+        .left {
             font-size: 1.1rem;
             font-family: 'Ubuntu', sans-serif;
         }
-        .right{
+
+        .right {
             font-size: 1.2rem;
             font-family: 'Ubuntu', sans-serif;
         }
-        .firstSection{
+
+        .firstSection {
             display: flex;
             justify-content: space-around;
             align-items: center;
             margin: 23px 0;
         }
-        .firstSection > div{
-           width : 30%;
-           /* background-color: cadetblue; */
-           font-family: 'Source Code Pro', monospace;
-           
+
+        .firstSection>div {
+            width: 30%;
+            /* background-color: cadetblue; */
+            font-family: 'Source Code Pro', monospace;
+
         }
-        .leftSection{
+
+        .leftSection {
             /* margin: 30px 0; */
             font-size: 2.5rem;
             width: 30%
         }
-        .rightSection img{
-           width: 129%;
-           height: 95%;
-          
-           /* background-color: aliceblue; */
+
+        .rightSection img {
+            width: 129%;
+            height: 95%;
+
+            /* background-color: aliceblue; */
         }
-        .yellow{
+
+        .yellow {
+            color: rgb(113, 232, 139);
+        }
+        #element{
             color: rgb(113, 232, 139);
         }
     </style>
@@ -78,14 +103,14 @@
     <header>
         <nav>
             <div class="left">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Service</li>
-                <li>Projects</li>
-                <li>Contact</li>
-            </ul>
-        </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Service</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact</a></li>
+                </ul>
+            </div>
             <div class="right">ABSAR's Portfolio</div>
         </nav>
     </header>
@@ -93,15 +118,22 @@
     <main>
         <section class="firstSection">
             <div class="leftSection">
-             Assalamualaikum! I am <span class="yellow">Absar</span>
-             
-             <div>A Programmer and a Developer</div>
+                Assalamualaikum! I am <span class="yellow">Absar</span>
+                <div>and I have expertise on</div>
+                <span id="element"></span>
             </div>
             <div class="rightSection">
-        <img src="absarport.png" alt="">
+                <img src="absarport.png" alt="">
             </div>
         </section>
-    </main>
+   
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Competitive Programming', 'App and Web Developer', 'Machine Learning and AI enthusiast','Problem Solving'],
+            typeSpeed: 200,
+        });
+    </script>
 </body>
 
 </html>
