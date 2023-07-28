@@ -164,6 +164,109 @@
             top: -32px;
             left: -9px;
         }
+        footer{
+            background-color: rgb(19, 34, 39);
+            /* height: 233px; */
+
+        }
+        .footer{
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+            font-family: "Ubuntu", sans-serif;
+            font-size: smaller;
+            font-weight:lighter;
+            color: rgb(157, 177, 171);
+            
+            
+        }
+        .footer ul{
+            list-style : none ;
+           
+        }
+       
+        .footer >div {
+            width : 123px;
+            
+        }
+        footer .footer-rights{
+            text-align: center;
+            color: gray;
+            padding: 12px 0px;
+            
+        }
+        .leftSection .buttons{
+            padding: 90px 20px;
+           
+        }
+       
+        
+       .leftSection .btn:hover{
+        color: rgb(5, 30, 30);
+            background-color: white;
+            border: 2px solid rgb(24, 168, 147);
+       }
+        .leftSection .btn{
+            padding: 12px ;
+            background: rgb(5, 30, 30);
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+            
+        }
+
+
+        .leftSection .btn:click{
+            color: rgb(255, 255, 255);
+            background-color: rgb(28, 8, 8);
+            border: 2px solid rgb(159, 33, 33);
+       }
+
+
+        /* email section  */
+        .email-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #03110f;
+        }
+
+        .email-section h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .email-input,
+        .email-textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .email-submit {
+            padding: 10px;
+            background: rgb(5, 30, 30);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .email-submit:hover {
+            background-color: rgb(28, 8, 8);
+        }
+
     </style>
 </head>
 
@@ -189,6 +292,17 @@
                 Assalamualaikum! I am <span class="yellow">Absar</span>
                 <div>and I have expertise on</div>
                 <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn">
+                        Resume
+                    </button>
+                    <a href="https://github.com/sabsar42"  target="_blank">
+                        <button class="btn">
+                            GitHub
+                        </button>
+                    </a>
+                    
+                </div>
             </div>
             <div class="rightSection">
                 <img src="absarport.png" alt="">
@@ -285,6 +399,56 @@
                 </div>
             </div>
         </section>
+
+
+
+
+
+
+
+         <!-- Email section  -->
+
+
+
+
+         <section class="email-section">
+            <h2>Contact Me</h2>
+            <form class="email-form" action="send_email.php" method="post">
+                <input class="email-input" type="text" name="name" placeholder="Your Name" required>
+                <input class="email-input" type="email" name="email" placeholder="Your Email Address" required>
+                <textarea class="email-textarea" name="message" placeholder="Your Message" required></textarea>
+                <input class="email-submit" type="submit" value="Send">
+            </form>
+        </section>
+
+        
+        </main>
+
+
+        <footer>
+
+            <div class="footer">
+                <div class="footer-first">
+                    <h3>Absar's Portfolio</h3>
+                </div>
+                <div class="footer-second">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Service</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="footer-third"></div>
+                <div class="footer-fourth"></div>
+            </div>
+            <div class="footer-rights">
+                www.shakibabsar.io | All Rights Reserved 2023
+            </div>
+       </footer>
+
+
+
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
