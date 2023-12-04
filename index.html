@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
-    <style>
+   
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -295,6 +296,68 @@
         .email-submit:hover {
             background-color: rgb(28, 8, 8);
         }
+
+
+        
+
+/* Media query for tablet  */
+
+@media screen and (max-width: 1200px) {
+  .mainclass {
+    background-color: #FFFFFF;
+    padding: 10px;
+    
+  }
+  footer {
+    text-align: center; 
+  }
+}
+
+/* Media query for  phones */
+@media screen and (max-width: 500px) {
+ 
+  .left{
+    flex-direction: row-reverse;
+    width: 100%; 
+     margin-left: -20px; 
+  }
+  .buttons{
+    flex-direction: column; flex-direction: column;
+    width: 100%; 
+     margin-left: -20px; 
+  }
+ 
+  footer {
+    text-align: center; 
+  }
+  /* Default styles */
+
+/* Media query for screens up to 400 pixels */
+@media screen and (max-width: 400px) {
+    .leftSection {
+        width: 100%;
+        margin-left: 0;
+    }
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Media query for screens up to 1200 pixels */
+@media screen and (max-width: 1200px) {
+    .mainclass {
+        background-color: #FFFFFF;
+        padding: 10px;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+}
+        
     </style>
 </head>
 
@@ -321,13 +384,19 @@
                 <div>and I have expertise on</div>
                 <span id="element"></span>
 
-
+              
                 <div class="buttons">
 
 
                     <a href="https://www.stopstalk.com/user/profile/sabsar42" target="_blank">
                         <button class="btn">
                             StopsTalk
+                        </button>
+                    </a>
+
+                    <a href="https://github.com/sabsar42" target="_blank">
+                        <button class="btn">
+                            GitHub
                         </button>
                     </a>
 
@@ -338,11 +407,7 @@
                         </button>
                     </a>
 
-                    <a href="https://github.com/sabsar42" target="_blank">
-                        <button class="btn">
-                            GitHub
-                        </button>
-                    </a>
+                   
                     <a href="https://www.linkedin.com/in/shakib-absar-/" target="_blank">
                         <button class="btn">
 
