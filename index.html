@@ -1,583 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABSAR- Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
-   
-   <style>
-        * {
-            margin: 0;
-            padding: 0;
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: rgb(3, 14, 14);
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 70px;
+
+        background-color: rgb(5, 30, 30);
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: cneter;
+      }
+
+      nav ul li {
+        list-style-type: none;
+        margin: 0 23px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+
+      nav ul li a:hover {
+        color: rgb(65, 197, 206);
+        font-size: 1.18rem;
+      }
+
+      .left {
+        font-size: 1.1rem;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      .right {
+        font-size: 1.2rem;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 80px 0;
+      }
+
+      .firstSection > div {
+        width: 30%;
+        /* background-color: cadetblue; */
+        font-family: "Source Code Pro", monospace;
+      }
+
+      .leftSection {
+        font-size: 2.5rem;
+        width: 30%;
+        min-width: 300px;
+        white-space: nowrap;
+        /* Add a minimum width to prevent it from becoming too narrow */
+      }
+
+      .rightSection img {
+        width: 129%;
+        height: 95%;
+
+        /* background-color: aliceblue; */
+      }
+
+      .yellow {
+        color: rgb(113, 232, 139);
+        white-space: normal;
+      }
+
+      .secondSection {
+        font-size: 1.2rem;
+        font-family: "Source Code Pro", monospace;
+        margin: auto;
+        max-width: 80vw;
+        height: 90vh;
+      }
+
+      .secondSection h1 {
+        font-size: 1.9rem;
+        font-family: "Source Code Pro", monospace;
+      }
+
+      .secondSection .box {
+        background: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+      }
+
+      .secondSection .vertical {
+        height: 93px;
+        width: 1px;
+        background-color: white;
+        margin: 0px 100px;
+      }
+
+      #element {
+        color: rgb(113, 232, 139);
+        /* margin-bottom: 60px ; */
+        /* Add some bottom margin to create space between Typed.js and buttons */
+      }
+
+      main hr {
+        border: 0;
+        background: rgb(178, 188, 180);
+        height: 1.3px;
+        margin: 60px 80px;
+      }
+
+      main h1 {
+        color: aquamarine;
+      }
+
+      .text-gray {
+        color: rgb(59, 124, 102);
+      }
+
+      .vertical-title {
+        position: relative;
+        top: 75px;
+        width: 150px;
+        font-size: 18px;
+      }
+
+      .vertical-desc {
+        color: gray;
+        font-size: 12px;
+        top: 86px;
+        width: 150px;
+        position: relative;
+      }
+
+      .image-top {
+        width: 23px;
+        position: relative;
+        top: -32px;
+        left: -9px;
+      }
+
+      footer {
+        background-color: rgb(19, 34, 39);
+        /* height: 233px; */
+      }
+
+      .footer {
+        display: flex;
+        padding: 23px 122px;
+        justify-content: space-evenly;
+        font-family: "Ubuntu", sans-serif;
+        font-size: smaller;
+        font-weight: lighter;
+        color: rgb(157, 177, 171);
+      }
+
+      .footer ul {
+        list-style: none;
+      }
+
+      .footer > div {
+        width: 123px;
+      }
+
+      footer .footer-rights {
+        text-align: center;
+        color: gray;
+        padding: 12px 0px;
+      }
+
+      .leftSection .buttons {
+        display: flex;
+        gap: 30px;
+        padding: 90px 90px;
+        /* Adjust this value to set the desired space between the buttons */
+      }
+
+      .leftSection .btn:hover {
+        color: rgb(5, 30, 30);
+        background-color: white;
+        border: 2px solid rgb(24, 168, 147);
+      }
+
+      .leftSection .btn {
+        padding: 8px;
+        background: rgb(5, 30, 30);
+        color: white;
+        border: 2px solid white;
+        border-radius: 6px;
+        font-size: 20px;
+        cursor: pointer;
+        margin: auto;
+        margin-left: -10px;
+      }
+
+      .leftSection .btn:click {
+        color: rgb(255, 255, 255);
+        background-color: rgb(28, 8, 8);
+        border: 2px solid rgb(159, 33, 33);
+      }
+
+      /* email section  */
+      .email-section {
+        text-align: center;
+        padding: 40px 0;
+        background-color: #03110f;
+      }
+
+      .email-section h2 {
+        color: #fff;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .email-input,
+      .email-textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .email-submit {
+        padding: 10px;
+        background: rgb(5, 30, 30);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .email-submit:hover {
+        background-color: rgb(28, 8, 8);
+      }
+
+      /* Media query for tablet  */
+
+      @media screen and (max-width: 1200px) {
+        .mainclass {
+          background-color: #ffffff;
+          padding: 10px;
         }
-
-        body {
-            background-color: rgb(3, 14, 14);
-            color: white;
+        footer {
+          text-align: center;
         }
+      }
 
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 70px;
-
-            background-color: rgb(5, 30, 30);
-            ;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: cneter;
-        }
-
-        nav ul li {
-            list-style-type: none;
-            margin: 0 23px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        nav ul li a:hover {
-
-            color: rgb(65, 197, 206);
-            font-size: 1.18rem;
-        }
-
+      /* Media query for  phones */
+      @media screen and (max-width: 500px) {
         .left {
-            font-size: 1.1rem;
-            font-family: 'Ubuntu', sans-serif;
+          flex-direction: row-reverse;
+          width: 100%;
+          margin-left: -20px;
         }
-
-        .right {
-            font-size: 1.2rem;
-            font-family: 'Ubuntu', sans-serif;
-        }
-
-        .firstSection {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 80px 0;
-        }
-
-        .firstSection>div {
-            width: 30%;
-            /* background-color: cadetblue; */
-            font-family: 'Source Code Pro', monospace;
-
-        }
-
-        .leftSection {
-            font-size: 2.5rem;
-            width: 30%;
-            min-width: 300px;
-            white-space: nowrap;
-            /* Add a minimum width to prevent it from becoming too narrow */
-        }
-
-
-
-
-        .rightSection img {
-            width: 129%;
-            height: 95%;
-
-            /* background-color: aliceblue; */
-        }
-
-        .yellow {
-            color: rgb(113, 232, 139);
-            white-space: normal;
-        }
-
-        .secondSection {
-            font-size: 1.2rem;
-            font-family: 'Source Code Pro', monospace;
-            margin: auto;
-            max-width: 80vw;
-            height: 90vh;
-
-        }
-
-        .secondSection h1 {
-            font-size: 1.9rem;
-            font-family: 'Source Code Pro', monospace;
-
-
-        }
-
-        .secondSection .box {
-            background: white;
-            width: 80vw;
-            height: 2px;
-            margin: 56px 0;
-            display: flex;
-        }
-
-        .secondSection .vertical {
-            height: 93px;
-            width: 1px;
-            background-color: white;
-            margin: 0px 100px;
-        }
-
-        #element {
-            color: rgb(113, 232, 139);
-            /* margin-bottom: 60px ; */
-            /* Add some bottom margin to create space between Typed.js and buttons */
-        }
-
-
-        main hr {
-            border: 0;
-            background: rgb(178, 188, 180);
-            height: 1.3px;
-            margin: 60px 80px;
-
-        }
-
-        main h1 {
-            color: aquamarine;
-
-
-        }
-
-        .text-gray {
-
-            color: rgb(59, 124, 102);
-
-        }
-
-        .vertical-title {
-            position: relative;
-            top: 75px;
-            width: 150px;
-            font-size: 18px;
-
-
-        }
-
-        .vertical-desc {
-            color: gray;
-            font-size: 12px;
-            top: 86px;
-            width: 150px;
-            position: relative;
-
-        }
-
-        .image-top {
-            width: 23px;
-            position: relative;
-            top: -32px;
-            left: -9px;
+        .buttons {
+          flex-direction: column;
+          flex-direction: column;
+          width: 100%;
+          margin-left: -20px;
         }
 
         footer {
-            background-color: rgb(19, 34, 39);
-            /* height: 233px; */
-
+          text-align: center;
         }
+        /* Default styles */
 
-        .footer {
-            display: flex;
-            padding: 23px 122px;
-            justify-content: space-evenly;
-            font-family: "Ubuntu", sans-serif;
-            font-size: smaller;
-            font-weight: lighter;
-            color: rgb(157, 177, 171);
-
-
-        }
-
-        .footer ul {
-            list-style: none;
-
-        }
-
-        .footer>div {
-            width: 123px;
-
-        }
-
-        footer .footer-rights {
-            text-align: center;
-            color: gray;
-            padding: 12px 0px;
-
-        }
-
-        .leftSection .buttons {
-            display: flex;
-            gap: 30px;
-            padding: 90px 90px;
-            /* Adjust this value to set the desired space between the buttons */
-        }
-
-
-        .leftSection .btn:hover {
-            color: rgb(5, 30, 30);
-            background-color: white;
-            border: 2px solid rgb(24, 168, 147);
-        }
-
-        .leftSection .btn {
-            padding: 8px;
-            background: rgb(5, 30, 30);
-            color: white;
-            border: 2px solid white;
-            border-radius: 6px;
-            font-size: 20px;
-            cursor: pointer;
-            margin: auto;
-            margin-left: -10px;
-            
-        }
-
-
-
-        .leftSection .btn:click {
-            color: rgb(255, 255, 255);
-            background-color: rgb(28, 8, 8);
-            border: 2px solid rgb(159, 33, 33);
-        }
-
-
-        /* email section  */
-        .email-section {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #03110f;
-        }
-
-        .email-section h2 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .email-form {
-            display: flex;
+        /* Media query for screens up to 400 pixels */
+        @media screen and (max-width: 400px) {
+          .leftSection {
+            width: 100%;
+            margin-left: 0;
+          }
+          .buttons {
             flex-direction: column;
-            max-width: 400px;
-            margin: 0 auto;
+            width: 100%;
+            margin-left: 0;
+          }
         }
 
-        .email-input,
-        .email-textarea {
+        /* Media query for screens up to 1200 pixels */
+        @media screen and (max-width: 1200px) {
+          .mainclass {
+            background-color: #ffffff;
             padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+          }
+          footer {
+            text-align: center;
+          }
         }
-
-        .email-submit {
-            padding: 10px;
-            background: rgb(5, 30, 30);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        .email-submit:hover {
-            background-color: rgb(28, 8, 8);
-        }
-
-
-        
-
-/* Media query for tablet  */
-
-@media screen and (max-width: 1200px) {
-  .mainclass {
-    background-color: #FFFFFF;
-    padding: 10px;
-    
-  }
-  footer {
-    text-align: center; 
-  }
-}
-
-/* Media query for  phones */
-@media screen and (max-width: 500px) {
- 
-  .left{
-    flex-direction: row-reverse;
-    width: 100%; 
-     margin-left: -20px; 
-  }
-  .buttons{
-    flex-direction: column; flex-direction: column;
-    width: 100%; 
-     margin-left: -20px; 
-  }
- 
-  footer {
-    text-align: center; 
-  }
-  /* Default styles */
-
-/* Media query for screens up to 400 pixels */
-@media screen and (max-width: 400px) {
-    .leftSection {
-        width: 100%;
-        margin-left: 0;
-    }
-    .buttons {
-        flex-direction: column;
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
-/* Media query for screens up to 1200 pixels */
-@media screen and (max-width: 1200px) {
-    .mainclass {
-        background-color: #FFFFFF;
-        padding: 10px;
-    }
-    footer {
-        text-align: center;
-    }
-}
-
-}
-        
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <div class="left">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Service</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact</a></li>
-                </ul>
-            </div>
-            <div class="right">ABSAR's Portfolio</div>
-        </nav>
+      <nav>
+        <div class="left">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Service</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="right">ABSAR's Portfolio</div>
+      </nav>
     </header>
 
-    
     <main>
-        <section class="firstSection">
-            <div class="leftSection">
-                Assalamualaikum! I am <span class="yellow">Absar</span>
-                <div>and I have expertise on</div>
-                <span id="element"></span>
+      <section class="firstSection">
+        <div class="leftSection">
+          Assalamualaikum! I am <span class="yellow">Absar</span>
+          <div>and I have expertise on</div>
+          <span id="element"></span>
 
-            
-                <div class="buttons">
+          <div class="buttons">
+            <a
+              href="https://www.stopstalk.com/user/profile/sabsar42"
+              target="_blank"
+            >
+              <button
+                class="btn"
+                style="
+                  background-color: rgb(231, 158, 145);
+                  color: rgb(17, 17, 17);
+                "
+              >
+                StopStalk
+              </button>
+            </a>
 
-                    <a href="https://www.stopstalk.com/user/profile/sabsar42" target="_blank">
-                        <button class="btn">
-                            StopsTalk
-                        </button>
-                    </a>
+            <a href="https://github.com/sabsar42" target="_blank">
+              <button
+                class="btn"
+                style="background-color: rgb(0, 1, 3); color: white"
+              >
+                GitHub
+              </button>
+            </a>
 
-                    <a href="https://github.com/sabsar42" target="_blank">
-                        <button class="btn">
-                            GitHub
-                        </button>
-                    </a>
+            <a href="https://codeforces.com/profile/sabsar_42" target="_blank">
+              <button
+                class="btn"
+                style="background-color: rgb(95, 20, 15); color: white"
+              >
+                Codeforces
+              </button>
+            </a>
 
+            <a
+              href="https://www.linkedin.com/in/shakib-absar-/"
+              target="_blank"
+            >
+              <button
+                class="btn"
+                style="background-color: rgb(4, 21, 78); color: white"
+              >
+                LinkedIn
+              </button>
+            </a>
+            <a href="https://www.facebook.com/shakib.senpai/" target="_blank">
+              <button
+                class="btn"
+                style="background-color: rgb(35, 89, 206); color: white"
+              >
+                Facebook
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="absarport.png" alt="" />
+        </div>
+      </section>
 
-                    <a href="https://codeforces.com/profile/sabsar_42" target="_blank">
-                        <button class="btn">
-                            CodeForces
-                        </button>
-                    </a>
+      <hr />
+      <section class="secondSection">
+        <span class="text-gray"> My Skills </span>
+        <h1>Experience</h1>
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="d.png" alt="" />
 
-                   
-                    <a href="https://www.linkedin.com/in/shakib-absar-/" target="_blank">
-                        <button class="btn">
+            <div class="vertical-title">Art Teacher (2016-2020)</div>
+            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="d.png" alt="" />
 
-                            LinkedIn
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="rightSection">
-                <img src="absarport.png" alt="">
-            </div>
-        </section>
+            <div class="vertical-title">Art Teacher (2016-2020)</div>
+            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="d.png" alt="" />
 
-        <hr>
-        <section class="secondSection">
-            <span class="text-gray">
-                My Skills
-            </span>
-            <h1>Experience</h1>
-            <div class="box">
+            <div class="vertical-title">Art Teacher (2016-2020)</div>
+            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="d.png" alt="" />
 
+            <div class="vertical-title">Art Teacher (2016-2020)</div>
+            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
+          </div>
 
-                <div class="vertical">
+          <div class="vertical">
+            <img class="image-top" src="d.png" alt="" />
 
+            <div class="vertical-title">Art Teacher (2016-2020)</div>
+            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
+          </div>
+        </div>
+      </section>
 
-                    <img class="image-top" src="d.png" alt="">
+      <!-- Email section  -->
 
-                    <div class="vertical-title">
-                        Art Teacher (2016-2020)
-                    </div>
-                    <div class="vertical-desc">
-                        lorelkkdw
-                        wnklne
-                        emkwm
-                    </div>
-
-
-                </div>
-                <div class="vertical">
-
-
-                    <img class="image-top" src="d.png" alt="">
-
-                    <div class="vertical-title">
-                        Art Teacher (2016-2020)
-                    </div>
-                    <div class="vertical-desc">
-                        lorelkkdw
-                        wnklne
-                        emkwm
-                    </div>
-
-
-                </div>
-                <div class="vertical">
-
-
-                    <img class="image-top" src="d.png" alt="">
-
-                    <div class="vertical-title">
-                        Art Teacher (2016-2020)
-                    </div>
-                    <div class="vertical-desc">
-                        lorelkkdw
-                        wnklne
-                        emkwm
-                    </div>
-
-                </div>
-                <div class="vertical">
-
-
-                    <img class="image-top" src="d.png" alt="">
-
-                    <div class="vertical-title">
-                        Art Teacher (2016-2020)
-                    </div>
-                    <div class="vertical-desc">
-                        lorelkkdw
-                        wnklne
-                        emkwm
-                    </div>
-
-                </div>
-
-
-                <div class="vertical">
-
-
-                    <img class="image-top" src="d.png" alt="">
-
-                    <div class="vertical-title">
-                        Art Teacher (2016-2020)
-                    </div>
-                    <div class="vertical-desc">
-                        lorelkkdw
-                        wnklne
-                        emkwm
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-        <!-- Email section  -->
-
-
-
-
-        <section class="email-section">
-            <h2>Contact Me</h2>
-            <form class="email-form"
-                action="https://docs.google.com/forms/d/e/1FAIpQLSe5bJadFwBAJjldPSvbVXQR08L-u_uSiG6IJThoxUzDf-0L9w/formResponse"
-                method="post">
-
-                <!-- <input class="email-input" type="text" name="name" placeholder="Your Name" required>
+      <section class="email-section">
+        <h2>Contact Me</h2>
+        <form
+          class="email-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe5bJadFwBAJjldPSvbVXQR08L-u_uSiG6IJThoxUzDf-0L9w/formResponse"
+          method="post"
+        >
+          <!-- <input class="email-input" type="text" name="name" placeholder="Your Name" required>
                 <input class="email-input" type="email" name="email" placeholder="Your Email Address" required>
                 <textarea class="email-textarea" name="message" placeholder="Your Message" required></textarea>
                 <input class="email-submit" type="submit" value="Send"> -->
 
-                <input class="email-input" type="text" name="name" placeholder="Your Name" required>
-                <input class="email-input" type="email" name="email" placeholder="Your Email Address" required>
-                <textarea class="email-textarea" name="message" placeholder="Your Message" required></textarea>
-                <input class="email-submit" type="submit" value="Send">
-
-
-            </form>
-        </section>
-
-
+          <input
+            class="email-input"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="email-input"
+            type="email"
+            name="email"
+            placeholder="Your Email Address"
+            required
+          />
+          <textarea
+            class="email-textarea"
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <input class="email-submit" type="submit" value="Send" />
+        </form>
+      </section>
     </main>
 
-
     <footer>
-
-        <div class="footer">
-            <div class="footer-first">
-                <h3>Absar's Portfolio</h3>
-            </div>
-            <div class="footer-second">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Service</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-            <div class="footer-third"></div>
-            <div class="footer-fourth"></div>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Absar's Portfolio</h3>
         </div>
-        <div class="footer-rights">
-            www.shakibabsar.io | All Rights Reserved 2023
+        <div class="footer-second">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contact</li>
+          </ul>
         </div>
+        <div class="footer-third"></div>
+        <div class="footer-fourth"></div>
+      </div>
+      <div class="footer-rights">
+        www.shakibabsar.io | All Rights Reserved 2023
+      </div>
     </footer>
-
-
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        var typed = new Typed('#element', {
-            strings: ['Competitive Programming', 'Application Development', 'Basic Machine Learning and AI', 'Problem Solving'],
-            typeSpeed: 30,
-        });
+      var typed = new Typed("#element", {
+        strings: [
+          "Competitive Programming",
+          "Application Development",
+          "Basic Machine Learning and AI",
+          "Problem Solving",
+        ],
+        typeSpeed: 30,
+      });
     </script>
-</body>
-
+  </body>
 </html>
