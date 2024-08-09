@@ -216,44 +216,68 @@
         background-color: rgb(28, 8, 8);
       }
 
-      /* Media query for tablet  */
-
-      @media screen and (max-width: 1200px) {
-        .left {
-          flex-direction: row-reverse;
-          width: 100%;
-          margin-left: -20px;
-        }
-        .buttons {
-          flex-direction: column;
-          flex-direction: column;
-          width: 100%;
-          margin-left: -20px;
+      /* Media query for tablets and small laptops */
+      @media screen and (max-width: 768px) {
+        nav {
+          padding: 0 10px;
         }
 
-        footer {
-          text-align: center;
+        .firstSection {
+          flex-direction: column;
+          margin: 40px 10px;
+        }
+
+        .leftSection {
+          font-size: 2rem;
+        }
+
+        .rightSection img {
+          max-width: 200px;
+        }
+
+        .leftSection .btn {
+          font-size: 16px;
+        }
+
+        .email-section {
+          padding: 20px 10px;
         }
       }
 
-      /* Media query for  phones */
-      @media screen and (max-width: 500px) {
-        .left {
-          flex-direction: row-reverse;
-          width: 100%;
-          margin-left: -20px;
+      /* Media query for mobile phones */
+      @media screen and (max-width: 480px) {
+        nav .right {
+          font-size: 1.5rem;
         }
-        .buttons {
-          flex-direction: column;
-          flex-direction: column;
-          width: 100%;
-          margin-left: -20px;
+
+        .firstSection {
+          margin: 20px 10px;
+        }
+
+        .leftSection {
+          font-size: 1.5rem;
+        }
+
+        .rightSection img {
+          max-width: 150px;
+        }
+
+        .leftSection .btn {
+          padding: 6px 12px;
+          font-size: 14px;
+        }
+
+        .email-section h2 {
+          font-size: 1.5rem;
+        }
+
+        .email-form {
+          padding: 0 15px;
         }
 
         footer {
-          text-align: center;
+          font-size: 0.7rem;
         }
-        /* Default styles */
       }
     </style>
   </head>
