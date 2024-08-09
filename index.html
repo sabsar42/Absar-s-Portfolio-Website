@@ -13,6 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Indie+Flower&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap"
       rel="stylesheet"
     />
@@ -63,8 +70,9 @@
       }
 
       .right {
-        font-size: 1.2rem;
-        font-family: "Ubuntu", sans-serif;
+        font-size: 2.2rem;
+        font-family: "Dancing Script", "Pacifico", "Indie Flower", "Raleway",
+          "Comic Sans MS", "Papyrus", "Ubuntu", sans-serif;
       }
 
       .firstSection {
@@ -89,86 +97,13 @@
       }
 
       .rightSection img {
-        width: 129%;
+        float: right;
+        border-radius: 10%;
+        width: 100%;
         height: 95%;
-
-        /* background-color: aliceblue; */
-      }
-
-      .yellow {
-        color: rgb(113, 232, 139);
-        white-space: normal;
-      }
-
-      .secondSection {
-        font-size: 1.2rem;
-        font-family: "Source Code Pro", monospace;
-        margin: auto;
-        max-width: 80vw;
-        height: 90vh;
-      }
-
-      .secondSection h1 {
-        font-size: 1.9rem;
-        font-family: "Source Code Pro", monospace;
-      }
-
-      .secondSection .box {
-        background: white;
-        width: 80vw;
-        height: 2px;
-        margin: 56px 0;
-        display: flex;
-      }
-
-      .secondSection .vertical {
-        height: 93px;
-        width: 1px;
-        background-color: white;
-        margin: 0px 100px;
-      }
-
-      #element {
-        color: rgb(113, 232, 139);
-        /* margin-bottom: 60px ; */
-        /* Add some bottom margin to create space between Typed.js and buttons */
-      }
-
-      main hr {
-        border: 0;
-        background: rgb(178, 188, 180);
-        height: 1.3px;
-        margin: 60px 80px;
-      }
-
-      main h1 {
-        color: aquamarine;
-      }
-
-      .text-gray {
-        color: rgb(59, 124, 102);
-      }
-
-      .vertical-title {
-        position: relative;
-        top: 75px;
-        width: 150px;
-        font-size: 18px;
-      }
-
-      .vertical-desc {
-        color: gray;
-        font-size: 12px;
-        top: 86px;
-        width: 150px;
-        position: relative;
-      }
-
-      .image-top {
-        width: 23px;
-        position: relative;
-        top: -32px;
-        left: -9px;
+        border: 4px solid rgb(120, 164, 245);
+        box-shadow: 0 0 10px rgb(63, 174, 238), 0 0 20px rgb(103, 161, 228),
+          0 0 30px rgb(7, 130, 231);
       }
 
       footer {
@@ -202,8 +137,8 @@
 
       .leftSection .buttons {
         display: flex;
-        gap: 30px;
-        padding: 90px 90px;
+        gap: 20px;
+
         /* Adjust this value to set the desired space between the buttons */
       }
 
@@ -276,10 +211,18 @@
       /* Media query for tablet  */
 
       @media screen and (max-width: 1200px) {
-        .mainclass {
-          background-color: #ffffff;
-          padding: 10px;
+        .left {
+          flex-direction: row-reverse;
+          width: 100%;
+          margin-left: -20px;
         }
+        .buttons {
+          flex-direction: column;
+          flex-direction: column;
+          width: 100%;
+          margin-left: -20px;
+        }
+
         footer {
           text-align: center;
         }
@@ -303,30 +246,6 @@
           text-align: center;
         }
         /* Default styles */
-
-        /* Media query for screens up to 400 pixels */
-        @media screen and (max-width: 400px) {
-          .leftSection {
-            width: 100%;
-            margin-left: 0;
-          }
-          .buttons {
-            flex-direction: column;
-            width: 100%;
-            margin-left: 0;
-          }
-        }
-
-        /* Media query for screens up to 1200 pixels */
-        @media screen and (max-width: 1200px) {
-          .mainclass {
-            background-color: #ffffff;
-            padding: 10px;
-          }
-          footer {
-            text-align: center;
-          }
-        }
       }
     </style>
   </head>
@@ -334,23 +253,15 @@
   <body>
     <header>
       <nav>
-        <div class="left">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">About</a></li>
-            <li><a href="/">Service</a></li>
-            <li><a href="/">Projects</a></li>
-            <li><a href="/">Contact</a></li>
-          </ul>
-        </div>
-        <div class="right">ABSAR's Portfolio</div>
+        <div class="left"></div>
+        <div class="right">ShakibAbsar</div>
       </nav>
     </header>
 
     <main>
       <section class="firstSection">
         <div class="leftSection">
-          Assalamualaikum! I am <span class="yellow">Absar</span>
+          Assalamualaikum! <br />I am <span class="yellow">Absar</span>
           <div>and I have expertise on</div>
           <span id="element"></span>
 
@@ -410,63 +321,25 @@
           </div>
         </div>
         <div class="rightSection">
-          <img src="absarport.png" alt="" />
+          <img src="absarport.jpg" alt="" />
         </div>
       </section>
 
-      <hr />
-      <section class="secondSection">
-        <span class="text-gray"> My Skills </span>
-        <h1>Experience</h1>
-        <div class="box">
-          <div class="vertical">
-            <img class="image-top" src="d.png" alt="" />
-
-            <div class="vertical-title">Art Teacher (2016-2020)</div>
-            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="d.png" alt="" />
-
-            <div class="vertical-title">Art Teacher (2016-2020)</div>
-            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="d.png" alt="" />
-
-            <div class="vertical-title">Art Teacher (2016-2020)</div>
-            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="d.png" alt="" />
-
-            <div class="vertical-title">Art Teacher (2016-2020)</div>
-            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
-          </div>
-
-          <div class="vertical">
-            <img class="image-top" src="d.png" alt="" />
-
-            <div class="vertical-title">Art Teacher (2016-2020)</div>
-            <div class="vertical-desc">lorelkkdw wnklne emkwm</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Email section  -->
+      <!-- <hr /> -->
 
       <section class="email-section">
         <h2>Contact Me</h2>
+
         <form
           class="email-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSe5bJadFwBAJjldPSvbVXQR08L-u_uSiG6IJThoxUzDf-0L9w/formResponse"
-          method="post"
+          action="https://api.web3forms.com/submit"
+          method="POST"
         >
-          <!-- <input class="email-input" type="text" name="name" placeholder="Your Name" required>
-                <input class="email-input" type="email" name="email" placeholder="Your Email Address" required>
-                <textarea class="email-textarea" name="message" placeholder="Your Message" required></textarea>
-                <input class="email-submit" type="submit" value="Send"> -->
-
+          <input
+            type="hidden"
+            name="access_key"
+            value="97e9a0d7-6ff0-4275-a69f-0c9e88e3a176"
+          />
           <input
             class="email-input"
             type="text"
@@ -493,33 +366,15 @@
     </main>
 
     <footer>
-      <div class="footer">
-        <div class="footer-first">
-          <h3>Absar's Portfolio</h3>
-        </div>
-        <div class="footer-second">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Service</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div class="footer-third"></div>
-        <div class="footer-fourth"></div>
-      </div>
-      <div class="footer-rights">
-        www.shakibabsar.io | All Rights Reserved 2023
-      </div>
+      <div class="footer-rights">https://github.com/sabsar42</div>
     </footer>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed("#element", {
         strings: [
-          "Competitive Programming",
           "Application Development",
-          "Basic Machine Learning and AI",
+          "Machine Learning",
           "Problem Solving",
         ],
         typeSpeed: 30,
