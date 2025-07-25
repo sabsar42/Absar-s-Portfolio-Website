@@ -1,439 +1,1080 @@
+<!-- back -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABSAR- Portfolio</title>
+    <title>Shakib Absar - Portfolio</title>
     <link
+      rel="icon"
       type="image/png"
       sizes="96x96"
-      rel="icon"
       href="icons8-portfolio-96.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Indie+Flower&family=Raleway:wght@400;700&display=swap"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap"
-      rel="stylesheet"
-    />
-
     <style>
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --text: #37352f;
+        --text-light: #6b6b6b;
+        --border: #e9e9e9;
+        --accent: #2563eb;
+        --accent-light: #eff6ff;
+        --shadow: rgba(0, 0, 0, 0.05);
+      }
+
+      [data-theme="dark"] {
+        --bg: #191919;
+        --bg-secondary: #2f2f2f;
+        --text: #ffffff;
+        --text-light: #9b9b9b;
+        --border: #3f3f3f;
+        --accent: #3b82f6;
+        --accent-light: #1e293b;
+        --shadow: rgba(0, 0, 0, 0.3);
       }
 
       body {
-        background-color: rgb(3, 14, 14);
-        color: white;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: all 0.3s ease;
       }
 
-      nav {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 70px;
-
-        background-color: rgb(5, 30, 30);
-      }
-
-      nav ul {
-        display: flex;
-        justify-content: cneter;
-      }
-
-      nav ul li {
-        list-style-type: none;
-        margin: 0 23px;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-      }
-
-      nav ul li a:hover {
-        color: rgb(65, 197, 206);
-        font-size: 1.18rem;
-      }
-
-      .left {
-        /* position: fixed; */
-        font-size: 1.1rem;
-        font-family: "Ubuntu", sans-serif;
-      }
-
-      .right {
-        /* position: fixed; */
-        font-size: 2.2rem;
-        font-family: "Dancing Script", "Pacifico", "Indie Flower", "Raleway",
-          "Comic Sans MS", "Papyrus", "Ubuntu", sans-serif;
-      }
-
-      .firstSection {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 80px 0;
-      }
-
-      .firstSection > div {
-        width: 30%;
-        /* background-color: cadetblue; */
-        font-family: "Source Code Pro", monospace;
-      }
-
-      .leftSection {
-        font-size: 2.5rem;
-        width: 30%;
-        min-width: 300px;
-        white-space: nowrap;
-        /* Add a minimum width to prevent it from becoming too narrow */
-      }
-
-      .rightSection img {
-        float: right;
-        border-radius: 10%;
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
         width: 100%;
-        height: 95%;
-        border: 4px solid rgb(120, 164, 245);
-        box-shadow: 0 0 10px rgb(63, 174, 238), 0 0 20px rgb(103, 161, 228),
-          0 0 30px rgb(7, 130, 231);
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
       }
 
-      footer {
-        background-color: rgb(19, 34, 39);
-        /* height: 233px; */
-      }
-
-      .footer {
+      .nav-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
         display: flex;
-        padding: 23px 122px;
-        justify-content: space-evenly;
-        font-family: "Ubuntu", sans-serif;
-        font-size: smaller;
-        font-weight: lighter;
-        color: rgb(157, 177, 171);
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
       }
 
-      .footer ul {
+      .logo {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--text);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
         list-style: none;
       }
 
-      .footer > div {
-        width: 123px;
+      .nav-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
       }
 
-      footer .footer-rights {
-        text-align: center;
-        color: gray;
-        padding: 12px 0px;
+      .nav-links a:hover {
+        color: var(--text);
       }
 
-      .leftSection .buttons {
-        display: flex;
-        gap: 20px;
-      }
-
-      .leftSection .btn:hover {
-        color: rgb(5, 30, 30);
-        background-color: white;
-        border: 2px solid rgb(24, 168, 147);
-      }
-
-      .leftSection .btn {
-        padding: 8px;
-        background: rgb(5, 30, 30);
-        color: white;
-        border: 2px solid white;
-        border-radius: 6px;
-        font-size: 20px;
-        cursor: pointer;
-        margin: auto;
-        margin-left: -10px;
-      }
-
-      .leftSection .btn:click {
-        color: rgb(255, 255, 255);
-        background-color: rgb(28, 8, 8);
-        border: 2px solid rgb(159, 33, 33);
-      }
-
-      /* email section  */
-      .email-section {
-        text-align: center;
-        padding: 40px 0;
-        background-color: #03110f;
-      }
-
-      .email-section h2 {
-        color: #fff;
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-      }
-
-      .email-form {
-        display: flex;
-        flex-direction: column;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .email-input,
-      .email-textarea {
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      .email-submit {
-        padding: 10px;
-        background: rgb(5, 30, 30);
-        color: white;
+      .theme-toggle {
+        background: none;
         border: none;
-        border-radius: 6px;
-        font-size: 1.1rem;
+        color: var(--text-light);
         cursor: pointer;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        border-radius: 6px;
+        transition: all 0.2s;
       }
 
-      .email-submit:hover {
-        background-color: rgb(28, 8, 8);
+      .theme-toggle:hover {
+        background: var(--bg-secondary);
+        color: var(--text);
       }
 
-      /* Responsive styles */
+      /* Main Content */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 80px 2rem 2rem;
+      }
 
+      /* Hero Section */
+      .hero {
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 2rem;
+        border: 3px solid var(--border);
+        object-fit: cover;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text);
+      }
+
+      .hero .subtitle {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        font-weight: 400;
+      }
+
+      .typed-text {
+        color: var(--accent);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+        border: 1px solid var(--accent);
+      }
+
+      .btn-primary:hover {
+        background: var(--accent);
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--bg-secondary);
+      }
+
+      /* Social Links */
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 4rem;
+      }
+
+      .social-link {
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.2s;
+        background: var(--bg);
+      }
+
+      .social-link:hover {
+        background: var(--bg-secondary);
+        color: var(--text);
+        transform: translateY(-1px);
+      }
+
+      /* Section Styles */
+      .section {
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .about-text {
+        font-size: 1rem;
+        color: var(--text-light);
+        line-height: 1.7;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .stat-item {
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid var(--border);
+      }
+
+      .stat-number {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--accent);
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-top: 0.5rem;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        transition: all 0.2s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px var(--shadow);
+      }
+
+      .project-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+      }
+
+      .project-subtitle {
+        font-size: 0.9rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .project-description {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tech-tag {
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .skill-category h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text);
+      }
+
+      .skill-list {
+        list-style: none;
+      }
+
+      .skill-list li {
+        color: var(--text-light);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      /* Research Section */
+      .research-item {
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        transition: all 0.2s;
+      }
+
+      .research-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px var(--shadow);
+      }
+
+      .research-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .research-meta {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        margin-bottom: 0.5rem;
+      }
+
+      .research-type {
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .research-journal {
+        font-style: italic;
+      }
+
+      .research-authors {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .research-authors strong {
+        color: var(--accent);
+      }
+
+      .research-stats {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .stat-badge {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--text-light);
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .stat-badge.highlight {
+        background: var(--accent-light);
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .research-description {
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+      .experience-item {
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+      }
+
+      .experience-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-company {
+        font-size: 0.9rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .experience-description {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background: var(--bg-secondary);
+        padding: 2rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text);
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 0.9rem;
+        transition: border-color 0.2s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 2rem 0;
+        border-top: 1px solid var(--border);
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      /* Responsive */
       @media (max-width: 768px) {
-        rightSection img {
-          float: right;
-          border-radius: 10%;
-          width: 100%;
-          height: 95%;
-          border: 4px solid rgb(120, 164, 245);
-          box-shadow: 0 0 10px rgb(149, 255, 181), 0 0 20px rgb(229, 233, 238),
-            0 0 30px rgb(185, 243, 167);
-          margin: 5px 5px;
-          padding: 10px 30px;
+        .nav-links {
+          display: none;
         }
-        .firstSection {
+
+        .container {
+          padding: 80px 1rem 1rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-buttons {
           flex-direction: column;
           align-items: center;
-          margin: 40px 0;
         }
 
-        .firstSection > div {
-          width: 90%;
-          margin-bottom: 20px;
-        }
-
-        .leftSection {
-          font-size: 2rem;
-          width: 90%;
-        }
-
-        .rightSection img {
-          float: none;
-          width: 80%;
-          height: auto;
-          margin-top: 20px;
-        }
-
-        .leftSection .buttons {
-          margin-top: 40px;
-          flex-direction: column;
-          gap: 10px;
-          margin-bottom: 40px;
-        }
-        .leftSection .btn {
-          /* align-items: center;/ */
-          width: 80%;
-
-          margin: 5px 5px;
-          padding: 10px 20px;
-          background: rgb(5, 30, 30);
-
-          border-radius: 6px;
-          font-size: 20px;
-          cursor: pointer;
-          text-align: center;
-        }
-
-        .email-form {
-          max-width: 100%;
-          margin: 5px 5px;
-          padding: 10px 30px;
+        .btn {
+          width: 200px;
+          justify-content: center;
         }
       }
 
       @media (max-width: 480px) {
-        .leftSection {
-          font-size: 1.5rem;
+        .hero h1 {
+          font-size: 1.8rem;
         }
 
-        .email-section h2 {
-          font-size: 1.5rem;
-        }
-
-        .email-submit {
-          font-size: 1rem;
+        .section-title {
+          font-size: 1.3rem;
         }
       }
     </style>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <div class="left"></div>
-        <div class="right">ShakibAbsar</div>
-      </nav>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Shakib Absar</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </nav>
 
-    <main>
-      <section class="firstSection">
-        <div class="leftSection">
-          Assalamualaikum! <br />I am <span class="yellow">Absar</span>
-          <div>and I have expertise on</div>
-          <span id="element"></span>
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <img src="absarport.jpg" alt="Shakib Absar" class="profile-image" />
+        <h1>Shakib Absar</h1>
+        <p class="subtitle">
+          Software Developer &
+          <span class="typed-text" id="typed-text"></span>
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-envelope"></i>
+            Contact Me
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1EaKVFu-KOHYZdAY16xOQK1FSVVVBJD5K/view?usp=sharing"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fas fa-download"></i>
+            Resume
+          </a>
+        </div>
 
-          <div class="buttons">
-            <a
-              href="https://www.stopstalk.com/user/profile/sabsar42"
-              target="_blank"
-            >
-              <button
-                class="btn"
-                style="
-                  background-color: rgb(231, 158, 145);
-                  color: rgb(17, 17, 17);
-                "
-              >
-                StopStalk
-              </button>
-            </a>
+        <!-- Social Links -->
+        <div class="social-links">
+          <a
+            href="https://github.com/sabsar42"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shakib-absar-/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://codeforces.com/profile/sabsar_42"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fas fa-code"></i>
+          </a>
+          <a
+            href="https://www.stopstalk.com/user/profile/sabsar42"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fas fa-chart-line"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/shakib.senpai/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </section>
 
-            <a href="https://github.com/sabsar42" target="_blank">
-              <button
-                class="btn"
-                style="background-color: rgb(0, 1, 3); color: white"
-              >
-                GitHub
-              </button>
-            </a>
+      <!-- About Section -->
+      <section id="about" class="section">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Assalamualaikum! I'm a Computer Science student at Leading
+              University (CGPA: 3.90) with a passion for Software development
+              and AI/ML. I specialize in Flutter development and have experience
+              working with various technologies.
+            </p>
 
-            <a href="https://codeforces.com/profile/sabsar_42" target="_blank">
-              <button
-                class="btn"
-                style="background-color: rgb(95, 20, 15); color: white"
-              >
-                Codeforces
-              </button>
-            </a>
+            <p>
+              Currently working as an Undergraduate Research Assistant at Intex
+              Research Lab, focusing on image processing and computer vision
+              projects. I'm also active in competitive programming with 700+
+              problems solved across various platforms.
+            </p>
 
-            <a
-              href="https://www.linkedin.com/in/shakib-absar-/"
-              target="_blank"
-            >
-              <button
-                class="btn"
-                style="background-color: rgb(4, 21, 78); color: white"
-              >
-                LinkedIn
-              </button>
-            </a>
-            <a href="https://www.facebook.com/shakib.senpai/" target="_blank">
-              <button
-                class="btn"
-                style="background-color: rgb(35, 89, 206); color: white"
-              >
-                Facebook
-              </button>
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1EaKVFu-KOHYZdAY16xOQK1FSVVVBJD5K/view?usp=sharing"
-              target="_blank"
-            >
-              <button
-                class="btn"
-                style="
-                  background-color: rgb(244, 246, 252);
-                  color: rgb(19, 17, 17);
-                "
-              >
-                Resume
-              </button>
-            </a>
+            <p>
+              I love mentoring juniors and have served as Chairperson of IEEE
+              Computer Society LU Student Branch. Always excited to work on
+              innovative projects that can make a real impact.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-number">1000+</span>
+              <div class="stat-label">Problems Solved</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">2x</span>
+              <div class="stat-label">Hackathon Win</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">4+</span>
+              <div class="stat-label">Major Projects</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <div class="stat-label">Awards</div>
+            </div>
           </div>
         </div>
-        <div class="rightSection">
-          <img src="absarport.jpg" alt="" />
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3 class="project-title">Digital Pharmacist (Digi-Pharma)</h3>
+            <p class="project-subtitle">Mobile Health Application</p>
+            <p class="project-description">
+              Developed a comprehensive Flutter app for patients to manage
+              medicine records, medication schedules, and electronic health
+              records. Features ML-powered prescription scanner and AI health
+              assistant chatbot using Gemini API.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">GetX</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">ML Kit</span>
+              <span class="tech-tag">Gemini API</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3 class="project-title">Google Map Scraper</h3>
+            <p class="project-subtitle">Web Scraping Tool</p>
+            <p class="project-description">
+              Built a Streamlit web application that scrapes business details
+              from Google Maps using Playwright automation. Supports bulk data
+              extraction and Excel export functionality.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Playwright</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Web Scraping</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3 class="project-title">Rate My Professor AI</h3>
+            <p class="project-subtitle">RAG-Powered System</p>
+            <p class="project-description">
+              AI-powered professor information retrieval system using RAG
+              pipeline with Gemini embeddings and vector database, featuring a
+              modern NextJS frontend.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">LLM</span>
+              <span class="tech-tag">NextJS</span>
+              <span class="tech-tag">ReactJS</span>
+              <span class="tech-tag">Gemini API</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3 class="project-title">Bangladesh Medicine Data Analysis</h3>
+            <p class="project-subtitle">Data Science Project</p>
+            <p class="project-description">
+              Scraped and analyzed 50,000+ medicine records from Bangladesh
+              government database, identifying key patterns and underrepresented
+              drug classes with comprehensive visualizations.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Scikit-learn</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- <hr /> -->
-
-      <section class="email-section">
-        <h2>Contact Me (Anonymously)</h2>
-
-        <form
-          class="email-form"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-        >
-          <input
-            type="hidden"
-            name="access_key"
-            value="97e9a0d7-6ff0-4275-a69f-0c9e88e3a176"
-          />
-          <input
-            class="email-input"
-            type="text"
-            name="name"
-            placeholder="Your Name (optional)"
-          />
-          <input
-            class="email-input"
-            type="email"
-            name="email"
-            placeholder="Your Email Address (optional)"
-          />
-          <textarea
-            class="email-textarea"
-            name="message"
-            placeholder="Your Message"
-            required
-          ></textarea>
-          <input class="email-submit" type="submit" value="Send" />
-        </form>
+      <!-- Skills Section -->
+      <section class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <ul class="skill-list">
+              <li>C/C++</li>
+              <li>Python</li>
+              <li>Dart</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Frameworks</h3>
+            <ul class="skill-list">
+              <li>Flutter</li>
+              <li>ReactJS / NextJS</li>
+              <li>TensorFlow / PyTorch</li>
+              <li>NodeJS</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Database</h3>
+            <ul class="skill-list">
+              <li>Firebase</li>
+              <li>MySQL</li>
+              <li>Git & GitHub</li>
+              <li>Android Studio</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Specializations</h3>
+            <ul class="skill-list">
+              <li>Mobile App Development</li>
+              <li>Machine Learning & AI</li>
+              <li>Competitive Programming</li>
+              <li>Data Analysis</li>
+              <li>Web Scraping</li>
+            </ul>
+          </div>
+        </div>
       </section>
-    </main>
 
-    <footer>
-      <div class="footer-rights">https://github.com/sabsar42</div>
+      <!-- Research Section -->
+      <section id="research" class="section">
+        <h2 class="section-title">Research & Publications</h2>
+
+        <div class="research-item">
+          <h3 class="research-title">
+            A Novel Ensemble-Based Deep Learning Model with Explainable AI for
+            Accurate Kidney Disease Diagnosis
+          </h3>
+          <p class="research-meta">
+            <span class="research-type">Article</span> •
+            <span class="research-journal"
+              >Advances in Artificial Intelligence and Machine Learning</span
+            >
+            •
+            <span class="research-date">January 2025</span>
+          </p>
+          <p class="research-authors">
+            Md. Arifuzzaman, Iftekhar Ahmed, Md. Jalal Uddin Chowdhury,
+            <strong>Shakib Absar</strong>
+          </p>
+          <div class="research-stats">
+            <span class="stat-badge">105 Reads</span>
+            <span class="stat-badge">1 Citation</span>
+          </div>
+          <p class="research-description">
+            Developed an ensemble-based deep learning approach for kidney
+            disease diagnosis with explainable AI components, achieving high
+            accuracy in medical diagnosis prediction.
+          </p>
+        </div>
+
+        <div class="research-item">
+          <h3 class="research-title">
+            Performance Analysis of Tesseract and EasyOCR for Bangla Optical
+            Character Recognition on the Novel Bangla CrossHair Dataset
+          </h3>
+          <p class="research-meta">
+            <span class="research-type">Conference Paper</span> •
+            <span class="research-date">January 2025</span>
+          </p>
+          <p class="research-authors">
+            Abdulla Nasir Chowdhury, Aftar Ahmad Sami, Shah Masud Parvej Mamun,
+            Md. Saidur Rahman Kohinoor, <strong>Shakib Absar</strong>
+          </p>
+          <div class="research-stats">
+            <span class="stat-badge">57 Reads</span>
+            <span class="stat-badge highlight"
+              >Most read in the last month</span
+            >
+          </div>
+          <p class="research-description">
+            Comprehensive performance analysis comparing Tesseract and EasyOCR
+            for Bangla text recognition, introducing a novel CrossHair dataset
+            for improved OCR evaluation.
+          </p>
+        </div>
+
+        <div class="research-item">
+          <h3 class="research-title">Bangladesh-Medicine-Dataset-DGDA</h3>
+          <p class="research-meta">
+            <span class="research-type">Dataset</span> •
+            <span class="research-date">April 2025</span>
+          </p>
+          <p class="research-authors"><strong>Shakib Absar</strong></p>
+          <div class="research-stats">
+            <span class="stat-badge">8 Reads</span>
+            <span class="stat-badge">1 Citation</span>
+          </div>
+          <p class="research-description">
+            Comprehensive dataset of Bangladesh medicine information scraped
+            from DGDA database, containing 50,000+ medicine records for research
+            and analysis purposes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-item">
+          <h3 class="experience-title">Undergraduate Research Assistant</h3>
+          <p class="experience-company">
+            Intex Research Lab • Sep 2023 - Present
+          </p>
+          <p class="experience-description">
+            Collaborating with research team on image processing and computer
+            vision projects using OCR technology and Deep Learning. Currently
+            working on kidney disease detection using segmentation methods.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3 class="experience-title">Software Engineering Fellow</h3>
+          <p class="experience-company">Headstarter AI • Jul 2024 - Sep 2024</p>
+          <p class="experience-description">
+            Built 3 innovative AI projects leveraging ReactJS, NextJS, LLM, RAG
+            and OpenAI API. Ranked as finalist in Headstarter AI Hiring
+            Hackathon with team project.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3 class="experience-title">Chairperson</h3>
+          <p class="experience-company">
+            IEEE Computer Society Leading University Student Branch
+          </p>
+          <p class="experience-description">
+            Leading the IEEE Computer Society chapter, organizing programming
+            competitions and technical workshops. Mentoring juniors in
+            competitive programming and problem-solving.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <p style="color: var(--text-light); margin-bottom: 1rem">
+          Feel free to reach out for collaboration or just to say hi! I'm always
+          open to discussing new opportunities.
+        </p>
+
+        <div class="contact-form">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input
+              type="hidden"
+              name="access_key"
+              value="97e9a0d7-6ff0-4275-a69f-0c9e88e3a176"
+            />
+
+            <div class="form-group">
+              <label for="name">Name (Optional)</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email (Optional)</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Shakib Absar. Built with ❤️</p>
+      <p>
+        <a
+          href="https://github.com/sabsar42"
+          style="color: var(--accent); text-decoration: none"
+          >View source on GitHub</a
+        >
+      </p>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-      var typed = new Typed("#element", {
+      // Typed.js animation
+      const typed = new Typed("#typed-text", {
         strings: [
-          "Application Development",
-          "Machine Learning",
-          "Problem Solving",
+          "AI Enthusiast",
+          "Problem Solver",
+          "Competitive Programmer",
+          "Research Assistant",
         ],
-        typeSpeed: 30,
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+      });
+
+      // Theme toggle
+      function toggleTheme() {
+        const body = document.body;
+        const icon = document.getElementById("theme-icon");
+
+        if (body.getAttribute("data-theme") === "dark") {
+          body.removeAttribute("data-theme");
+          icon.className = "fas fa-moon";
+          localStorage.setItem("theme", "light");
+        } else {
+          body.setAttribute("data-theme", "dark");
+          icon.className = "fas fa-sun";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme");
+        const icon = document.getElementById("theme-icon");
+
+        if (savedTheme === "dark") {
+          document.body.setAttribute("data-theme", "dark");
+          icon.className = "fas fa-sun";
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Form submission feedback
+      document.querySelector("form").addEventListener("submit", function (e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        // Reset after 3 seconds (in case of success/error)
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
       });
     </script>
   </body>
